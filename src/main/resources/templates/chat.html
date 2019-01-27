@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot WebSocket</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+
+    <meta property="og:image" content="https://i.ytimg.com/vi/PCmAm6ZPIGU/hqdefault.jpg">
+    <meta property="og:title" content="Let Chat - Come To Join">
+    <meta property="og:description" content="Ứng dụng chat bằng SocketJs và Spring Webscoket">
+    <title>Let Chat - Come To Join</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <!-- https://cdnjs.com/libraries/sockjs-client -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+    <!-- https://cdnjs.com/libraries/stomp.js/ -->
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+
+
+</head>
+<body    background="http://hashtag-bg.com/wp-content/uploads/2018/08/website-design-background-images-resume-1-digital-marketing-agency.jpg">
+<div id="chat-container" class="container">
+    <div class="chat-header">
+        <div class="user-container">
+            <strong>
+                <span id="username" th:utext="${username}"></span>
+            </strong>
+            <a th:href="@{/logout}"><span class="glyphicon glyphicon-log-out"></span></a>
+        </div>
+        <h3>Anonymous Chat</h3>
+    </div>
+
+    <hr/>
+
+    <div id="connecting">Connecting...</div>
+    <ul id="messageArea">
+    </ul>
+    <form class="form" id="messageForm" name="messageForm">
+        <div class="input-message form-inline">
+            <input class="form-control" type="text" id="message" autocomplete="off"
+                   placeholder="Type a message..."/>
+            <button class="btn btn-default" type="submit">Send</button>
+        </div>
+    </form>
+</div>
+
+<script th:src="@{/js/main.js}"></script>
+
+</body>
+</html>
